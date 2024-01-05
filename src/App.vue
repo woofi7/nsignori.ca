@@ -31,6 +31,15 @@ import TheWelcome from './components/TheWelcome.vue'
       </div>
 
       <div>
+        <h2>Programme Explore</h2>
+        <span>2017</span>
+        <p>
+          Immersion anglaise<br>
+          University of Regina, Saskatchewan
+        </p>
+      </div>
+
+      <div>
         <h2>Diplôme d’études collégiales</h2>
         <span>2018</span>
         <p>
@@ -62,12 +71,34 @@ import TheWelcome from './components/TheWelcome.vue'
           <li>Organisation d’un atelier sur le développement Responsive avec HTML/CSS</li>
         </ul>
       </div>
+      <div>
+        <h2>Développeur Fullstack</h2>
+        <span>Été 2022</span>
+        <p>Bell Canada, Montréal</p>
+        <span>Stage S2</span>
+        <ul>
+          <li>Migration d’une application Razor vers une technologie Web moderne</li>
+          <li>Création de différents modules dont la génération de rapport PDF, l’intégration de dessins techniques à l’interface et un système de commentaires</li>
+          <li>Organisation d’un atelier sur le développement Responsive avec HTML/CSS</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Développeur Fullstack</h2>
+        <span>Été 2022</span>
+        <p>Bell Canada, Montréal</p>
+        <span>Stage S2</span>
+        <ul>
+          <li>Migration d’une application Razor vers une technologie Web moderne</li>
+          <li>Création de différents modules dont la génération de rapport PDF, l’intégration de dessins techniques à l’interface et un système de commentaires</li>
+          <li>Organisation d’un atelier sur le développement Responsive avec HTML/CSS</li>
+        </ul>
+      </div>
     </section>
 
     <section>
       <h1>Expériences de travails</h1>
       <div>
-        <h2>Administrateur système/développeur web</h2>
+        <h2>Développeur web - Administrateur système</h2>
         <span>Depuis janvier 2019</span>
         <p>Groupe Forman</p>
         <ul>
