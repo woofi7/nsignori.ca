@@ -1,7 +1,8 @@
 <script setup>
   import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-  import {ref} from "vue";
+  import {ref, defineProps} from "vue";
   import Preview from "@/components/Preview.vue";
+  import Tags from "@/components/Tags.vue";
 
   defineProps({
     title: String,
@@ -38,11 +39,7 @@
 <template>
   <div class="card">
     <div class="header" :class="tags ? 'hasTags' : ''">
-      <div v-if="tags" class="tags">
-        <div v-for="tag in tags" :class="tag.color" class="tag">
-          {{ tag.name }}
-        </div>
-      </div>
+      <Tags v-if="tags" :tags="tags"/>
       <div v-if="logoUrl" class="logo">
         <img :src="logoUrl" alt="Logo ETS">
       </div>
@@ -75,7 +72,6 @@
           </div>
           <img :src="artefact" alt="Artefact">
         </div>
-
         <Preview :show="showArtefact" :imgSrc="imgSrc" @toggleShow="toggleShow"/>
       </div>
     </div>
@@ -142,56 +138,6 @@
         width: 100%;
         max-height: 200px;
       }
-    }
-  }
-  .tags {
-    position: absolute;
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 0.2rem;
-    align-items: baseline;
-    max-width: 35%;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  .tag {
-    font-size: small;
-    border-radius: 1em;
-    background: black;
-    padding: 0 0.5em 0 0.5em;
-    color: white;
-
-    &.red {
-      background: darkred;
-    }
-    &.darkblue {
-      color: black;
-      background-color: #149eca;
-    }
-    &.purple {
-      background-color: #5632d5;
-    }
-    &.orange {
-      background-color: #e2492c;
-    }
-    &.green {
-      color: black;
-      background-color: #42d392;
-    }
-    &.teal {
-      background-color: #00546b;
-    }
-    &.blue {
-      background-color: #28799e;
-    }
-    &.turquoise {
-      background-color: #08bef2;
-    }
-    &.darkred {
-      background-color: #ab1d22;
     }
   }
 </style>
