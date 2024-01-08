@@ -3,41 +3,47 @@ import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
 import SupportIcon from './icons/IconSupport.vue'
-import ElementCard from "@/components/ElementCard.vue";
 import {ref} from "vue";
-import WorkCard from "@/components/WorkCard.vue";
-import ProjectCard from "@/components/ProjectCard.vue";
+import ProjectCard from "@/components/ElementCard.vue";
 
   const schools = ref([
     {
       title: "Baccalauréat en génie logiciel",
       date: "Décembre 2023",
-      linkText: "École de technologie supérieure (ÉTS)",
-      linkUrl: "https://www.etsmtl.ca/",
+      link: {
+        text: "École de technologie supérieure (ÉTS)",
+        url: "https://www.etsmtl.ca/"
+      },
       logoUrl: "src/assets/logoETS.jpg",
       location: "Montréal"
     },
     {
       title: "Session d’études à l’étranger",
       date: "Automne 2022",
-      linkText: "Université de Nantes – Polytech",
-      linkUrl: "https://www.univ-nantes.fr/",
+      link: {
+        text: "Université de Nantes – Polytech",
+        url: "https://www.univ-nantes.fr/"
+      },
       logoUrl: "src/assets/logoNantes.png",
       location: "France"
     },
     {
       title: "Diplôme d’études collégiales",
       date: "Informatique de gestion - 2018",
-      linkText: "Collège de Bois-de-Boulogne",
-      linkUrl: "https://www.bdeb.qc.ca/",
+      link: {
+        text: "Collège de Bois-de-Boulogne",
+        url: "https://www.bdeb.qc.ca/"
+      },
       logoUrl: "src/assets/logoBdeb.svg",
       location: "Montréal"
     },
     {
       title: "Programme Explore",
       date: "Immersion anglaise - 2017",
-      linkText: "University of Regina",
-      linkUrl: "https://www.uregina.ca/",
+      link: {
+        text: "University of Regina",
+        url: "https://www.uregina.ca/"
+      },
       logoUrl: "src/assets/logoUofR.jpg",
       location: "Saskatchewan"
     }
@@ -47,10 +53,12 @@ import ProjectCard from "@/components/ProjectCard.vue";
     {
       title: "Développeur Web - Administrateur Système",
       date: "Depuis janvier 2019 (4 ans)",
-      linkText: "Groupe Forman",
-      linkUrl: "https://groupeforman.ca/",
+      link: {
+        text: "Groupe Forman",
+        url: "https://groupeforman.ca/"
+      },
       location: "Mont-Blanc",
-      icons : [
+      tags : [
         {
           name: "EmberJS",
           color: "orange"
@@ -98,8 +106,10 @@ import ProjectCard from "@/components/ProjectCard.vue";
     {
       title: "Développeur Frontend",
       date: "Été 2022 - Stage (4 mois)",
-      linkText: "Graitec inc.",
-      linkUrl: "https://graitec.com/ca-en/",
+      link: {
+        text: "Graitec inc.",
+        url: "https://graitec.com/ca-en/"
+      },
       location: "Montréal",
       moreInfo: {
         list:[
@@ -107,7 +117,7 @@ import ProjectCard from "@/components/ProjectCard.vue";
         "Création de différents modules dont la génération de rapport PDF, l’intégration de dessins techniques à l’interface et un système de commentaires",
         "Organisation d’un atelier sur le développement Responsive avec HTML/CSS"
       ]},
-      icons : [
+      tags : [
         {
           name: "React",
           color: "darkblue"
@@ -125,10 +135,12 @@ import ProjectCard from "@/components/ProjectCard.vue";
     {
       title: "Développeur Fullstack",
       date: "Été 2022 - Stage (4 mois)",
-      linkText: "Bell Canada",
-      linkUrl: "https://www.bell.ca/",
+      link: {
+        text: "Bell Canada",
+        url: "https://www.bell.ca/"
+      },
       location: "Montréal",
-      icons : [
+      tags : [
         {
           name: "EmberJS",
           color: "orange"
@@ -156,10 +168,12 @@ import ProjectCard from "@/components/ProjectCard.vue";
     },{
       title: "Développeur Fullstack",
       date: "Été 2022 - Stage (4 mois)",
-      linkText: "Bell Canada",
-      linkUrl: "https://www.bell.ca/",
+      link: {
+        text: "Bell Canada",
+        url: "https://www.bell.ca/"
+      },
       location: "Montréal",
-      icons : [
+      tags : [
         {
           name: "EmberJS",
           color: "orange"
@@ -181,10 +195,12 @@ import ProjectCard from "@/components/ProjectCard.vue";
     },{
       title: "Développeur Logiciel",
       date: "Hiver 2018 - Stage Collégial (4 mois)",
-      linkText: "JBM Logic Inc.",
-      linkUrl: "https://www.jbmlogic.com/",
+      link: {
+        text: "JBM Logic Inc.",
+        url: "https://www.jbmlogic.com/"
+      },
       location: "Boucherville",
-      icons : [
+      tags : [
         {
           name: "Apex",
           color: "red"
@@ -206,8 +222,10 @@ import ProjectCard from "@/components/ProjectCard.vue";
     },{
       title: "Tuteur informatique",
       date: "2015-2018 (3 ans)",
-      linkText: "Collège de Bois-de-Boulogne",
-      linkUrl: "https://www.bdeb.qc.ca/",
+      link: {
+        text: "Collège de Bois-de-Boulogne",
+        url: "https://www.bdeb.qc.ca/"
+      },
       location: "Montréal",
       moreInfo: {
         list:[
@@ -230,9 +248,12 @@ const projects = ref([
         link: "https://github.com/woofi7/lagenda-backend"
       },
     ],
-    linkText: "lagenda.ca",
-    linkUrl: "https://web.archive.org/web/20221210084806/https://lagenda.ca/",
-    icons : [
+    link: {
+      isDemo: true,
+      text: "lagenda.ca",
+      url: "https://web.archive.org/web/20221210084806/https://lagenda.ca/"
+    },
+    tags : [
       {
         name: "EmberJS",
         color: "orange"
@@ -276,9 +297,11 @@ const projects = ref([
   {
     title: "Serveur Minecraft Communautaire – Minefield.fr",
     date: "2016-2017",
-    linkText: "Minefield.fr",
-    linkUrl: "https://www.minefield.fr/",
-    icons : [
+    link: {
+      text: "Minefield.fr",
+      url: "https://www.minefield.fr/"
+    },
+    tags : [
       {
         name: "Java",
         color: "orange"
@@ -312,11 +335,10 @@ const projects = ref([
     <template #heading>Formations Académiques</template>
 
     <div class="cardList">
-      <ElementCard v-for="school in schools"
+      <ProjectCard v-for="school in schools"
         :title="school.title"
         :date="school.date"
-        :linkText="school.linkText"
-        :linkUrl="school.linkUrl"
+        :link="school.link"
         :logoUrl="school.logoUrl"
         :location="school.location" />
     </div>
@@ -329,14 +351,12 @@ const projects = ref([
     <template #heading>Expériences Professionnelles</template>
 
     <div class="cardList">
-      <WorkCard v-for="work in works"
+      <ProjectCard v-for="work in works"
                    :title="work.title"
                    :date="work.date"
-                   :linkText="work.linkText"
-                   :linkUrl="work.linkUrl"
-                   :logoUrl="work.logoUrl"
+                   :link="work.link"
                    :location="work.location"
-                   :icons="work.icons"
+                   :tags="work.tags"
                    :moreInfo="work.moreInfo"/>
     </div>
   </WelcomeItem>
@@ -351,10 +371,9 @@ const projects = ref([
       <ProjectCard v-for="project in projects"
                 :title="project.title"
                 :date="project.date"
-                :linkText="project.linkText"
-                :linkUrl="project.linkUrl"
+                :link="project.link"
                 :sources="project.sources"
-                :icons="project.icons"
+                :tags="project.tags"
                 :moreInfo="project.moreInfo"/>
     </div>
   </WelcomeItem>

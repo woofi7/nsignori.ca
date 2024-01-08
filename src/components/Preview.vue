@@ -11,7 +11,9 @@ defineProps({
 <template>
   <div class="preview" :class="[show ? 'show' : '']">
     <div class="content">
-      <div class="closeButton" @click="$emit('toggleShow')"><font-awesome-icon icon="fa-solid fa-x" /></div>
+      <div class="closeButton" @click="$emit('toggleShow')">
+        <font-awesome-icon icon="fa-solid fa-x" />
+      </div>
       <img :src="imgSrc" alt="Preview of artefact">
     </div>
   </div>
