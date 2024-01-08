@@ -264,6 +264,40 @@ const projects = ref([
         "Panneau d’administration pour la mise en ligne des articles et des balados sur les différents hébergeurs de contenu",
         "Hébergements des ressources (balados et images) avec Azure Storage",
         "Authentification avec Google OAuth"
+      ],
+      artefacts: [
+        '/lagenda1.png',
+        '/lagenda2.png',
+        '/lagenda3.jpg',
+        '/lagenda4.jpg'
+      ]
+    }
+  },
+  {
+    title: "Serveur Minecraft Communautaire – Minefield.fr",
+    date: "2016-2017",
+    linkText: "Minefield.fr",
+    linkUrl: "https://www.minefield.fr/",
+    icons : [
+      {
+        name: "Java",
+        color: "orange"
+      },
+      {
+        name: "Reflection",
+        color: "red"
+      },
+      {
+        name: "Graphisme 3D",
+        color: "blue"
+      }
+    ],
+    moreInfo: {
+      list: [
+        "Développement de mods et plugins",
+        "Création d’outils graphique dans un espace 3D",
+        "Générateur de blocs à partir de fichiers de configuration sans code",
+        "Réécriture de plusieurs mods et plugins vers un nouvelle version majeure de Minecraft"
       ]
     }
   },
@@ -313,7 +347,7 @@ const projects = ref([
     </template>
     <template #heading>Projets Personnels</template>
 
-    <div class="cardList">
+    <div class="cardList single">
       <ProjectCard v-for="project in projects"
                 :title="project.title"
                 :date="project.date"
@@ -330,7 +364,10 @@ const projects = ref([
  .cardList {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-   align-items: start;
+   align-items: stretch;
    grid-gap: 0.5rem;
+   &.single{
+     grid-template-columns: 1fr;
+   }
  }
 </style>

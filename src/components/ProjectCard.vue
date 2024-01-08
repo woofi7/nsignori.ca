@@ -1,19 +1,33 @@
 <script setup>
-  import {ref} from "vue";
   import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+  import {ref} from "vue";
+  import Preview from "@/components/Preview.vue";
 
   defineProps({
     title: String,
     date: String,
     linkText: String,
     linkUrl: String,
-    sources: [],
+    sources: Array,
     location: String,
-    icons: [],
-    moreInfo: []
+    icons: Array,
+    moreInfo: {
+      list: [String],
+      artefacts: [String]
+    }
   })
 
-  let isHidden = ref(true);
+  function toggleArtefactClick(img) {
+    showArtefact.value = true;
+    imgSrc.value = img;
+  }
+
+  function toggleShow() {
+    showArtefact.value = !showArtefact.value;
+  }
+
+  const showArtefact = ref(false);
+  const imgSrc = ref('');
 </script>
 
 <template>
@@ -32,27 +46,31 @@
       </div>
       <div>
         <p class="location">
-          Sources:
-          <a v-for="source in sources" :href="source.link">
-            {{source.text}} <font-awesome-icon icon="fa-brands fa-github"/>&nbsp
-          </a><br>
+          <div v-if="sources">
+            Sources: {{showArtefact}}
+            <a v-for="source in sources" :href="source.link">
+              {{source.text}} <font-awesome-icon icon="fa-brands fa-github"/>&nbsp
+            </a><br>
+          </div>
 
           Demo : <a :href="linkUrl">{{ linkText }}</a>
         </p>
       </div>
     </div>
     <div class="content">
-      <div :class="{ hidden: isHidden }">
-        <ul>
-          <li v-for="info in moreInfo.list">{{ info }}</li>
-        </ul>
-        <div v-html="moreInfo.extra">
-        </div>
+      <ul>
+        <li v-for="info in moreInfo.list">{{ info }}</li>
+      </ul>
+      <div v-html="moreInfo.extra">
       </div>
-      <div class="moreButton" @click="isHidden = !isHidden">
-        <font-awesome-icon icon="fa-angle-down" v-if="isHidden"/>
-        <font-awesome-icon icon="fa-angle-up" v-if="!isHidden"/>
+    </div>
+    <div class="artefacts">
+      <div class="artefact" v-for="artefact in moreInfo.artefacts"
+           @click="toggleArtefactClick(artefact)">
+        <img :src="artefact">
       </div>
+
+      <Preview :show="showArtefact" :imgSrc="imgSrc" @toggleShow="toggleShow"/>
     </div>
   </div>
 </template>
@@ -81,24 +99,24 @@
     display: flex;
     flex-direction: column;
 
-    & > .hidden {
-      display: none;
-    }
-    & > div > ul {
+    & > ul {
       padding-left: 1.5rem;
       padding-bottom: 0.5rem;
     }
   }
-  .moreButton {
-    background-color: #2b2b2b;
+  .artefacts {
     display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    font-size: x-large;
-    margin: 0.5rem -0.5rem -0.5rem -0.5rem;
-    &:hover {
-      background-color: black;
-      color: white;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    & > .artefact {
+      flex: 1 0 24%;
+      cursor: pointer;
+
+      & > img {
+        object-fit: contain;
+        width: 100%;
+        max-height: 200px;
+      }
     }
   }
   .tags {

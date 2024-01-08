@@ -8,8 +8,11 @@
     linkUrl: String,
     logoUrl: String,
     location: String,
-    icons: [],
-    moreInfo: []
+    icons: Array,
+    moreInfo: {
+      list: [String],
+      extra: String
+    }
   })
 
   let isHidden = ref(true);
@@ -36,16 +39,10 @@
       </div>
     </div>
     <div class="content">
-      <div :class="{ hidden: isHidden }">
-        <ul>
-          <li v-for="info in moreInfo.list">{{ info }}</li>
-        </ul>
-        <div v-html="moreInfo.extra">
-        </div>
-      </div>
-      <div class="moreButton" @click="isHidden = !isHidden">
-        <font-awesome-icon icon="fa-angle-down" v-if="isHidden"/>
-        <font-awesome-icon icon="fa-angle-up" v-if="!isHidden"/>
+      <ul>
+        <li v-for="info in moreInfo.list">{{ info }}</li>
+      </ul>
+      <div v-html="moreInfo.extra">
       </div>
     </div>
   </div>
@@ -74,25 +71,9 @@
   .content {
     display: flex;
     flex-direction: column;
-
-    & > .hidden {
-      display: none;
-    }
-    & > div > ul {
+    & > ul {
       padding-left: 1.5rem;
       padding-bottom: 0.5rem;
-    }
-  }
-  .moreButton {
-    background-color: #2b2b2b;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    font-size: x-large;
-    margin: 0.5rem -0.5rem -0.5rem -0.5rem;
-    &:hover {
-      background-color: black;
-      color: white;
     }
   }
   .tags {
