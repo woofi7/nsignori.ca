@@ -2,12 +2,11 @@
 import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 import ElementCard from "@/components/ElementCard.vue";
 import {ref} from "vue";
 import WorkCard from "@/components/WorkCard.vue";
+import ProjectCard from "@/components/ProjectCard.vue";
 
   const schools = ref([
     {
@@ -215,8 +214,60 @@ import WorkCard from "@/components/WorkCard.vue";
           "Assister les étudiants à travers les cours d’informatique"
         ]}
     }
+  ]);
 
-  ])
+const projects = ref([
+  {
+    title: "Plateforme web de publication d’articles et balados",
+    date: "2020-2023",
+    sources: [
+      {
+        text: "Frontend",
+        link: "https://github.com/woofi7/lagenda-frontend"
+      },
+      {
+        text: "Backend",
+        link: "https://github.com/woofi7/lagenda-backend"
+      },
+    ],
+    linkText: "lagenda.ca",
+    linkUrl: "https://web.archive.org/web/20221210084806/https://lagenda.ca/",
+    icons : [
+      {
+        name: "EmberJS",
+        color: "orange"
+      },
+      {
+        name: ".NET",
+        color: "purple"
+      },
+      {
+        name: "MySQL",
+        color: "teal"
+      },
+      {
+        name: "JsonAPI"
+      },
+      {
+        name: "Azure Storage",
+        color: "turquoise"
+      },
+      {
+        name: "Google OAuth",
+        color: "darkred"
+      }
+    ],
+    moreInfo: {
+      list: [
+        "Création du design graphique",
+        "Conception du site web avec EmberJS et .NET + EntityFramework et JsonAPI",
+        "Panneau d’administration pour la mise en ligne des articles et des balados sur les différents hébergeurs de contenu",
+        "Hébergements des ressources (balados et images) avec Azure Storage",
+        "Authentification avec Google OAuth"
+      ]
+    }
+  },
+])
 </script>
 
 <template>
@@ -224,7 +275,7 @@ import WorkCard from "@/components/WorkCard.vue";
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>Formations académiques</template>
+    <template #heading>Formations Académiques</template>
 
     <div class="cardList">
       <ElementCard v-for="school in schools"
@@ -241,7 +292,7 @@ import WorkCard from "@/components/WorkCard.vue";
     <template #icon>
       <ToolingIcon />
     </template>
-    <template #heading>Expériences professionnelles</template>
+    <template #heading>Expériences Professionnelles</template>
 
     <div class="cardList">
       <WorkCard v-for="work in works"
@@ -258,47 +309,20 @@ import WorkCard from "@/components/WorkCard.vue";
 
   <WelcomeItem>
     <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
       <SupportIcon />
     </template>
-    <template #heading>Support Vue</template>
+    <template #heading>Projets Personnels</template>
 
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
+    <div class="cardList">
+      <ProjectCard v-for="project in projects"
+                :title="project.title"
+                :date="project.date"
+                :linkText="project.linkText"
+                :linkUrl="project.linkUrl"
+                :sources="project.sources"
+                :icons="project.icons"
+                :moreInfo="project.moreInfo"/>
+    </div>
   </WelcomeItem>
 </template>
 
