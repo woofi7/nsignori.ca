@@ -50,7 +50,7 @@ const schools = ref([
 const works = ref([
   {
     title: "Développeur Web - Administrateur Système",
-    date: "Depuis janvier 2019 (4 ans)",
+    date: "Depuis janvier 2019",
     link: {
       text: "Groupe Forman",
       url: "https://groupeforman.ca/"
@@ -192,7 +192,7 @@ const works = ref([
       ]}
   },{
     title: "Développeur Logiciel",
-    date: "Hiver 2018 - Stage Collégial (4 mois)",
+    date: "Hiver 2018 - Stage (4 mois)",
     link: {
       text: "JBM Logic Inc.",
       url: "https://www.jbmlogic.com/"
@@ -326,17 +326,21 @@ const projects = ref([
 
 <template>
   <Header />
-  <section>
-    <h1>Connaissances particulières</h1>
-    <p>Langages : JavaScript, HTML/CSS, C#, Java, C, C++, PHP, Assembleur, Python, PL/SQL</p>
-    <p>Framework : Dotnet, EmberJs, React, VueJs</p>
-    <p>Outils de développement : Git, JetBrains, Visual Studio</p>
-    <p>Systèmes d’exploitation : Windows, Linux (Ubuntu, Debian)</p>
-    <p>Autre : DevOps, Docker, GitHub Actions, GDB, Azure Functions, Google Cloud</p>
-  </section>
   <Section>
     <template #icon>
-      <font-awesome-icon icon="fa-solid fa-school" />
+      <font-awesome-icon icon="fa-solid fa-book-open" />
+    </template>
+    <template #heading>Connaissances particulières</template>
+
+    <p><span class="white">Langages :</span> JavaScript, HTML/CSS, C#, Java, C, C++, PHP, Assembleur, Python, PL/SQL</p>
+    <p><span class="white">Framework :</span> Dotnet, EmberJs, React, VueJs</p>
+    <p><span class="white">Outils de développement :</span> Git, JetBrains, Visual Studio</p>
+    <p><span class="white">Systèmes d’exploitation :</span> Windows, Linux (Ubuntu, Debian)</p>
+    <p><span class="white">Autre :</span> DevOps, Docker, GitHub Actions, GDB, Azure Functions, Google Cloud</p>
+  </Section>
+  <Section>
+    <template #icon>
+      <font-awesome-icon icon="fa-solid fa-graduation-cap" />
     </template>
     <template #heading>Formations Académiques</template>
 
@@ -386,6 +390,9 @@ const projects = ref([
 </template>
 
 <style scoped>
+.white {
+  color: white;
+}
 .cardList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));

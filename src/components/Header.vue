@@ -31,7 +31,7 @@ header {
   position: sticky;
   top: 0;
   left: 0;
-  margin: -2rem -2rem 0 -2rem;
+  margin: -2rem -2rem 1rem -2rem;
   background-color: #101010;
   padding: 0.5rem;
   flex-wrap: wrap;
