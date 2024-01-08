@@ -95,7 +95,8 @@
     }
   }
   .logo > img {
-    width: 75px
+    max-width: 75px;
+    max-height: 75px;
   }
   .title {
     display: flex;

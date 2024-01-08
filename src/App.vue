@@ -2,6 +2,7 @@
 import {ref} from "vue";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import Section from '@/components/Section.vue'
+import Header from '@/components/Header.vue'
 import ProjectCard from "@/components/ElementCard.vue";
 
 const schools = ref([
@@ -324,13 +325,7 @@ const projects = ref([
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    <p>Nicolas Signori</p>
-    <p>Langues : français, anglais</p>
-    <p>nicolas.signori.1@ens.etsmtl.ca</p>
-  </header>
-
+  <Header />
   <section>
     <h1>Connaissances particulières</h1>
     <p>Langages : JavaScript, HTML/CSS, C#, Java, C, C++, PHP, Assembleur, Python, PL/SQL</p>
@@ -339,7 +334,6 @@ const projects = ref([
     <p>Systèmes d’exploitation : Windows, Linux (Ubuntu, Debian)</p>
     <p>Autre : DevOps, Docker, GitHub Actions, GDB, Azure Functions, Google Cloud</p>
   </section>
-
   <Section>
     <template #icon>
       <font-awesome-icon icon="fa-solid fa-school" />
