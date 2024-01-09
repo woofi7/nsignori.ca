@@ -1,0 +1,24 @@
+name: Docker image
+
+on:
+  push:
+    branches: [ $default-branch ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build the Docker image
+      run: |
+        docker build . -t nsignori/nsignori.ca:latest
+        docker push nsignori/nsignori.ca:latest
+#    - name: Portainer Stack Redeploy
+#      run: curl -X POST https://docker.woofi7.com/api/stacks/webhooks/9d71546e-74fe-4aea-9fcb-bcc4fc2aead6
