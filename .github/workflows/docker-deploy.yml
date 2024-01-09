@@ -2,7 +2,7 @@ name: Docker image
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [master]
   workflow_dispatch:
 
 jobs:
@@ -20,5 +20,5 @@ jobs:
       run: |
         docker build . -t nsignori/nsignori.ca:latest
         docker push nsignori/nsignori.ca:latest
-#    - name: Portainer Stack Redeploy
-#      run: curl -X POST https://docker.woofi7.com/api/stacks/webhooks/9d71546e-74fe-4aea-9fcb-bcc4fc2aead6
+    - name: Portainer Stack Redeploy
+      run: curl -X POST https://docker.woofi7.com/api/stacks/webhooks/494bc9c4-bfa4-477c-aa5d-9fb70b7e6b85
