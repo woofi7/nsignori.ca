@@ -64,5 +64,9 @@
     &.darkred {
       background-color: #ab1d22;
     }
+    &.yellow {
+      background-color: #dec100;
+      color: black;
+    }
   }
 </style>

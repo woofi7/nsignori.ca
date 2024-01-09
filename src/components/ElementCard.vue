@@ -52,7 +52,7 @@
             {{source.text}} <font-awesome-icon icon="fa-brands fa-github"/>&nbsp
           </a>
         </div>
-        <div>
+        <div v-if="link">
           <span v-if="link.isDemo">Demo : </span>
           <a :href="link.url">{{ link.text }}</a>
         </div>
@@ -121,6 +121,7 @@
       flex: 1 0 24%;
       cursor: pointer;
       height: fit-content;
+      max-width: 25%;
 
       & > .overlay {
         position: absolute;

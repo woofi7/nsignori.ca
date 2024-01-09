@@ -273,6 +273,9 @@ const projects = ref([
       {
         name: "Google OAuth",
         color: "darkred"
+      },
+      {
+        name: "Github Actions"
       }
     ],
     moreInfo: {
@@ -318,6 +321,115 @@ const projects = ref([
         "Création d’outils graphique dans un espace 3D",
         "Générateur de blocs à partir de fichiers de configuration sans code",
         "Réécriture de plusieurs mods et plugins vers un nouvelle version majeure de Minecraft"
+      ],
+      artefacts: [
+        '/minefield1.jpg',
+        '/minefield2.jpg'
+      ]
+    }
+  },
+  {
+    title: "Communauté Old School Runescape - OSRS Raids Qc",
+    date: "Depuis 2020",
+    tags : [
+      {
+        name: "VueJs",
+        color: "green"
+      },
+      {
+        name: "WordPress"
+      },
+      {
+        name: ".NET",
+        color: "purple"
+      },
+      {
+        name: "Python",
+        color: "yellow"
+      },
+      {
+        name: "Github Actions"
+      }
+    ],
+    sources: [
+      {
+        text: "Board Battleship",
+        link: "https://github.com/woofi7/osrs-battleship"
+      },
+      {
+        text: "Board Game of Life",
+        link: "https://github.com/PcoteStudio/OSRS-Discord-Bot"
+      }
+    ],
+    moreInfo: {
+      list: [
+        "Développement de plugins Discord pour différents évènements",
+        "Création de leaderboards à partir de différents API",
+        "Création de boards de 'bingo' intéractifs",
+        "Hosting de bots Discord"
+      ],
+      artefacts: [
+        '/osrs1.jpg'
+      ]
+    }
+  },
+  {
+    title: "nsignori.ca",
+    date: "2024",
+    tags : [
+      {
+        name: "VueJs",
+        color: "green"
+      }
+    ],
+    sources: [
+      {
+        text: "Github",
+        link: "https://github.com/woofi7/nsignori.ca"
+      }
+    ],
+    link: {
+      text: "nsignori.ca",
+      url: "https://nsignori.ca/"
+    },
+    moreInfo: {
+      list: [
+        "Site Web personnel développé avec VueJS"
+      ]
+    }
+  },
+  {
+    title: "Projets d'étude - Cégep",
+    date: "2015-2018",
+    tags : [
+      {
+        name: "Java",
+        color: "orange"
+      },
+      {
+        name: "c#",
+        color: "blue"
+      }
+    ],
+    sources: [
+      {
+        text: "Camel Up",
+        link: "https://github.com/woofi7/CamelUp"
+      },
+      {
+        text: "Pacman",
+        link: "https://github.com/woofi7/pacman"
+      },
+      {
+        text: "Pekeman",
+        link: "https://github.com/woofi7/pekeman"
+      }
+    ],
+    moreInfo: {
+      artefacts: [
+        '/camelUp.jpg',
+        '/pacman.jpg',
+        '/pekeman.jpg'
       ]
     }
   },
@@ -337,21 +449,6 @@ const projects = ref([
     <p><span class="white">Outils de développement :</span> Git, JetBrains, Visual Studio</p>
     <p><span class="white">Systèmes d’exploitation :</span> Windows, Linux (Ubuntu, Debian)</p>
     <p><span class="white">Autre :</span> DevOps, Docker, GitHub Actions, GDB, Azure Functions, Google Cloud</p>
-  </Section>
-  <Section>
-    <template #icon>
-      <font-awesome-icon icon="fa-solid fa-graduation-cap" />
-    </template>
-    <template #heading>Formations Académiques</template>
-
-    <div class="cardList">
-      <ProjectCard v-for="school in schools"
-                   :title="school.title"
-                   :date="school.date"
-                   :link="school.link"
-                   :logoUrl="school.logoUrl"
-                   :location="school.location" />
-    </div>
   </Section>
 
   <Section>
@@ -385,6 +482,22 @@ const projects = ref([
                    :sources="project.sources"
                    :tags="project.tags"
                    :moreInfo="project.moreInfo"/>
+    </div>
+  </Section>
+
+  <Section>
+    <template #icon>
+      <font-awesome-icon icon="fa-solid fa-graduation-cap" />
+    </template>
+    <template #heading>Formations Académiques</template>
+
+    <div class="cardList">
+      <ProjectCard v-for="school in schools"
+                   :title="school.title"
+                   :date="school.date"
+                   :link="school.link"
+                   :logoUrl="school.logoUrl"
+                   :location="school.location" />
     </div>
   </Section>
 </template>
