@@ -13,23 +13,13 @@
 </template>
 
 <style scoped>
+i {
+  display: none;
+}
 .item {
   margin-top: 0rem;
   display: flex;
   position: relative;
-}
-
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-
-  color: var(--color-text);
 }
 
 h3 {
@@ -39,36 +29,51 @@ h3 {
   color: var(--color-heading);
 }
 
-.item {
-  margin-top: 0;
-  padding: 0.4rem 0 1rem 2rem;
-}
+@media screen and (min-width: 600px) {
+  .details {
+    flex: 1;
+    margin-left: 1rem;
+  }
 
-i {
-  top: 0;
-  left: -26px;
-  position: absolute;
-  border: 1px solid var(--color-border);
-  background: var(--color-background);
-  border-radius: 8px;
-  width: 50px;
-  height: 50px;
-}
+  i {
+    display: flex;
+    place-items: center;
+    place-content: center;
 
-.item:after {
-  content: ' ';
-  border-left: 1px solid var(--color-border);
-  position: absolute;
-  left: 0;
-  top: 50px;
-  height: calc(100% - 25px);
-}
+    color: var(--color-text);
+  }
 
-.item:first-of-type:before {
-  display: none;
-}
+  .item {
+    margin-top: 0;
+    padding: 0.4rem 0 1rem 2rem;
+  }
 
-.item:last-of-type:after {
-  display: none;
+  i {
+    top: 0;
+    left: -26px;
+    position: absolute;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .item:after {
+    content: ' ';
+    border-left: 1px solid var(--color-border);
+    position: absolute;
+    left: 0;
+    top: 50px;
+    height: calc(100% - 25px);
+  }
+
+  .item:first-of-type:before {
+    display: none;
+  }
+
+  .item:last-of-type:after {
+    display: none;
+  }
 }
 </style>
