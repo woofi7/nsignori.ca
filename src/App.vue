@@ -295,40 +295,6 @@ const projects = ref([
     }
   },
   {
-    title: "Serveur Minecraft Communautaire – Minefield.fr",
-    date: "2016-2017",
-    link: {
-      text: "Minefield.fr",
-      url: "https://www.minefield.fr/"
-    },
-    tags : [
-      {
-        name: "Java",
-        color: "orange"
-      },
-      {
-        name: "Reflection",
-        color: "red"
-      },
-      {
-        name: "Graphisme 3D",
-        color: "blue"
-      }
-    ],
-    moreInfo: {
-      list: [
-        "Développement de mods et plugins",
-        "Création d’outils graphique dans un espace 3D",
-        "Générateur de blocs à partir de fichiers de configuration sans code",
-        "Réécriture de plusieurs mods et plugins vers un nouvelle version majeure de Minecraft"
-      ],
-      artefacts: [
-        '/minefield1.jpg',
-        '/minefield2.jpg'
-      ]
-    }
-  },
-  {
     title: "Communauté Old School Runescape - OSRS Raids Qc",
     date: "Depuis 2020",
     tags : [
@@ -395,6 +361,43 @@ const projects = ref([
     moreInfo: {
       list: [
         "Site Web personnel développé avec VueJS"
+      ],
+      artefacts: [
+        '/nsignori1.jpg'
+      ]
+    }
+  },
+  {
+    title: "Serveur Minecraft Communautaire – Minefield.fr",
+    date: "2016-2017",
+    link: {
+      text: "Minefield.fr",
+      url: "https://www.minefield.fr/"
+    },
+    tags : [
+      {
+        name: "Java",
+        color: "orange"
+      },
+      {
+        name: "Reflection",
+        color: "red"
+      },
+      {
+        name: "Graphisme 3D",
+        color: "blue"
+      }
+    ],
+    moreInfo: {
+      list: [
+        "Développement de mods et plugins",
+        "Création d’outils graphique dans un espace 3D",
+        "Générateur de blocs à partir de fichiers de configuration sans code",
+        "Réécriture de plusieurs mods et plugins vers un nouvelle version majeure de Minecraft"
+      ],
+      artefacts: [
+        '/minefield1.jpg',
+        '/minefield2.jpg'
       ]
     }
   },
