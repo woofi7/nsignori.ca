@@ -13,7 +13,7 @@ const schools = ref([
       text: "École de technologie supérieure (ÉTS)",
       url: "https://www.etsmtl.ca/"
     },
-    logoUrl: "src/assets/logoETS.jpg",
+    logoUrl: "/logoETS.jpg",
     location: "Montréal"
   },
   {
@@ -23,7 +23,7 @@ const schools = ref([
       text: "Université de Nantes – Polytech",
       url: "https://www.univ-nantes.fr/"
     },
-    logoUrl: "src/assets/logoNantes.png",
+    logoUrl: "/logoNantes.png",
     location: "France"
   },
   {
@@ -33,7 +33,7 @@ const schools = ref([
       text: "Collège de Bois-de-Boulogne",
       url: "https://www.bdeb.qc.ca/"
     },
-    logoUrl: "src/assets/logoBdeb.svg",
+    logoUrl: "/logoBdeb.svg",
     location: "Montréal"
   },
   {
@@ -43,7 +43,7 @@ const schools = ref([
       text: "University of Regina",
       url: "https://www.uregina.ca/"
     },
-    logoUrl: "src/assets/logoUofR.jpg",
+    logoUrl: "/logoUofR.jpg",
     location: "Saskatchewan"
   }
 ])
